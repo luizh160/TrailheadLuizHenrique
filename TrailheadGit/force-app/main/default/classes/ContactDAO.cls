@@ -8,4 +8,11 @@ public with sharing class ContactDAO {
         return [SELECT Id, Inactive_Account__c, AccountId FROM Contact WHERE AccountId IN :accountList];
 
     }
+
+    public static List<Contact> getContactByIdFromLWC(Id accountId) {
+       
+        return [SELECT FirstName, LastName, Email, Phone FROM Contact WHERE AccountId = :accountId ];//0015f00000Pas4QAAR AZIMUTE
+    }
+
+
 }
